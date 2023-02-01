@@ -9,8 +9,9 @@ module RailsAdminNestable
 
           output = content_tag :div, 'drag', class: 'dd-handle dd3-handle'
           output += content_tag :div, class: 'dd3-content' do
-            content = link_to object_label(tree_node), edit_path(@abstract_model, tree_node.id)
-            content += content_tag :div, action_links(tree_node), class: 'pull-right links'
+            content = tree_node.title
+            #content = link_to object_label(tree_node), edit_path(@abstract_model, tree_node.id)
+            #content += content_tag :div, action_links(tree_node), class: 'pull-right links'
           end
 
           output+= content_tag :ol, nested_tree_nodes(sub_tree_nodes), class: 'dd-list' if sub_tree_nodes && sub_tree_nodes.any?
